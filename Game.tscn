@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://crhd0fehb16si"]
+[gd_scene load_steps=13 format=4 uid="uid://crhd0fehb16si"]
 
 [ext_resource type="PackedScene" uid="uid://wakv8c48ud6k" path="res://Player.tscn" id="1_wbfu4"]
 [ext_resource type="Texture2D" uid="uid://dwv5hppgsxcta" path="res://brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_xkndl"]
 [ext_resource type="PackedScene" uid="uid://05jtu74ubx4i" path="res://platform.tscn" id="3_u44n3"]
+[ext_resource type="PackedScene" uid="uid://bplsm52u65l70" path="res://Coin.tscn" id="4_sb48q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u44n3"]
 texture = ExtResource("2_xkndl")
@@ -243,6 +244,15 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+
+[node name="Coin" parent="." instance=ExtResource("4_sb48q")]
+position = Vector2(120, 25)
+
+[node name="Coin2" parent="." instance=ExtResource("4_sb48q")]
+position = Vector2(200, 25)
+
+[node name="Coin3" parent="." instance=ExtResource("4_sb48q")]
+position = Vector2(264, 23)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_wbfu4")]
 position = Vector2(1, -12)
