@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://crhd0fehb16si"]
+[gd_scene load_steps=14 format=4 uid="uid://crhd0fehb16si"]
 
+[ext_resource type="PackedScene" uid="uid://bcnlrwbt7ygl5" path="res://kill_zone.tscn" id="1_t88pq"]
 [ext_resource type="PackedScene" uid="uid://wakv8c48ud6k" path="res://Player.tscn" id="1_wbfu4"]
 [ext_resource type="Texture2D" uid="uid://dwv5hppgsxcta" path="res://brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_xkndl"]
 [ext_resource type="PackedScene" uid="uid://05jtu74ubx4i" path="res://platform.tscn" id="3_u44n3"]
@@ -206,6 +207,21 @@ _data = {
 &"Side Move": SubResource("Animation_u44n3")
 }
 
+[sub_resource type="Animation" id="Animation_r0x5m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1687, -9)]
+}
+
 [sub_resource type="Animation" id="Animation_t88pq"]
 resource_name = "UpDown Move"
 loop_mode = 2
@@ -222,21 +238,6 @@ tracks/0/keys = {
 "values": [Vector2(1687, -9), Vector2(1687, -111)]
 }
 
-[sub_resource type="Animation" id="Animation_r0x5m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1687, -9)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3mrqo"]
 _data = {
 &"RESET": SubResource("Animation_r0x5m"),
@@ -244,6 +245,9 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+
+[node name="Kill Zone" parent="." instance=ExtResource("1_t88pq")]
+position = Vector2(85, 142)
 
 [node name="Coin" parent="." instance=ExtResource("4_sb48q")]
 position = Vector2(120, 25)
@@ -258,8 +262,9 @@ position = Vector2(264, 23)
 position = Vector2(1, -12)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-1, 12)
+position = Vector2(0, 6)
 zoom = Vector2(4, 4)
+limit_bottom = 300
 position_smoothing_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
