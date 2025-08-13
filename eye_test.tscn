@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://uxhhnjvu5ewr"]
+
+[ext_resource type="Texture2D" uid="uid://c7v2blnow778m" path="res://brackeys_platformer_assets/brackeys_platformer_assets/sprites/20250814-042223.jpg" id="1_t6auq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_konbn"]
+atlas = ExtResource("1_t6auq")
+region = Rect2(0, 0, 873, 821)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hu0f"]
+atlas = ExtResource("1_t6auq")
+region = Rect2(873, 0, 873, 821)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdouq"]
+atlas = ExtResource("1_t6auq")
+region = Rect2(1746, 0, 873, 821)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r188b"]
+atlas = ExtResource("1_t6auq")
+region = Rect2(2619, 0, 873, 821)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi1lo"]
+atlas = ExtResource("1_t6auq")
+region = Rect2(0, 821, 873, 821)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mkt6"]
+atlas = ExtResource("1_t6auq")
+region = Rect2(873, 821, 873, 821)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlxou"]
+atlas = ExtResource("1_t6auq")
+region = Rect2(1746, 821, 873, 821)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i6ws"]
+atlas = ExtResource("1_t6auq")
+region = Rect2(2619, 821, 873, 821)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oeexs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_konbn")
+}, {
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_5hu0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdouq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r188b")
+}, {
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_hi1lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mkt6")
+}, {
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_mlxou")
+}, {
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_0i6ws")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="EyeTest" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(0.0468213, 0.0403471)
+sprite_frames = SubResource("SpriteFrames_oeexs")
+autoplay = "default"
+frame_progress = 0.844188
