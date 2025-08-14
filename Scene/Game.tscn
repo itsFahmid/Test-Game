@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://crhd0fehb16si"]
+[gd_scene load_steps=18 format=4 uid="uid://crhd0fehb16si"]
 
 [ext_resource type="Texture2D" uid="uid://dwv5hppgsxcta" path="res://brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_48ymf"]
 [ext_resource type="PackedScene" uid="uid://bcnlrwbt7ygl5" path="res://Scene/kill_zone.tscn" id="2_cohtu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bplsm52u65l70" path="res://Scene/Coin.tscn" id="5_g3fkh"]
 [ext_resource type="PackedScene" uid="uid://qxvss12yn4vn" path="res://Scene/slime purple.tscn" id="6_jwmyi"]
 [ext_resource type="PackedScene" uid="uid://uxhhnjvu5ewr" path="res://Scene/eye_test.tscn" id="7_nspe4"]
+[ext_resource type="FontFile" uid="uid://bvebyc8uvk72q" path="res://brackeys_platformer_assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_cohtu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u44n3"]
 texture = ExtResource("1_48ymf")
@@ -344,9 +345,22 @@ position = Vector2(137, -92)
 [node name="Slime purple 3" parent="Enemy" instance=ExtResource("6_jwmyi")]
 position = Vector2(424, 67)
 
-[node name="EyeTest" parent="." instance=ExtResource("7_nspe4")]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="EyeTest" parent="Node2D" instance=ExtResource("7_nspe4")]
 position = Vector2(-29, -132)
 
-[node name="EyeTest2" parent="." instance=ExtResource("7_nspe4")]
+[node name="EyeTest2" parent="Node2D" instance=ExtResource("7_nspe4")]
 position = Vector2(19, -132)
 rotation = 3.14159
+
+[node name="Label" type="Label" parent="."]
+offset_left = -206.0
+offset_top = 6.0
+offset_right = 198.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("8_cohtu")
+theme_override_font_sizes/font_size = 8
+text = "Press Left/Right button to move.
+Press space bar to jump"
+horizontal_alignment = 1
