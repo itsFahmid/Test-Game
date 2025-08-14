@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=4 uid="uid://crhd0fehb16si"]
+[gd_scene load_steps=19 format=4 uid="uid://crhd0fehb16si"]
 
 [ext_resource type="Texture2D" uid="uid://dwv5hppgsxcta" path="res://brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_48ymf"]
+[ext_resource type="Script" uid="uid://bicdnsvp00fem" path="res://Script/Score.gd" id="1_tujvx"]
 [ext_resource type="PackedScene" uid="uid://bcnlrwbt7ygl5" path="res://Scene/kill_zone.tscn" id="2_cohtu"]
 [ext_resource type="PackedScene" uid="uid://wakv8c48ud6k" path="res://Scene/Player.tscn" id="3_tujvx"]
 [ext_resource type="PackedScene" uid="uid://05jtu74ubx4i" path="res://Scene/platform.tscn" id="4_2j816"]
@@ -251,6 +252,19 @@ _data = {
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_tujvx")
+
+[node name="ScoreLable" type="Label" parent="GameManager"]
+offset_left = 1574.0
+offset_top = -11.0
+offset_right = 1623.0
+offset_bottom = 12.0
+theme_override_fonts/font = ExtResource("8_cohtu")
+theme_override_font_sizes/font_size = 8
+text = "Coins: x"
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_sb48q")
 format = 2
@@ -345,16 +359,28 @@ position = Vector2(137, -92)
 [node name="Slime purple 3" parent="Enemy" instance=ExtResource("6_jwmyi")]
 position = Vector2(424, 67)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Eyes" type="Node2D" parent="."]
 
-[node name="EyeTest" parent="Node2D" instance=ExtResource("7_nspe4")]
+[node name="EyeTest" parent="Eyes" instance=ExtResource("7_nspe4")]
 position = Vector2(-29, -132)
 
-[node name="EyeTest2" parent="Node2D" instance=ExtResource("7_nspe4")]
+[node name="EyeTest2" parent="Eyes" instance=ExtResource("7_nspe4")]
 position = Vector2(19, -132)
 rotation = 3.14159
 
-[node name="Label" type="Label" parent="."]
+[node name="Texts" type="Node2D" parent="."]
+
+[node name="Label3" type="Label" parent="Texts"]
+offset_left = 371.0
+offset_top = -154.0
+offset_right = 591.0
+offset_bottom = -131.0
+theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
+theme_override_fonts/font = ExtResource("8_cohtu")
+theme_override_font_sizes/font_size = 8
+text = "Don't be scared, just a little more."
+
+[node name="Label" type="Label" parent="Texts"]
 offset_left = -206.0
 offset_top = 6.0
 offset_right = 198.0
@@ -364,3 +390,23 @@ theme_override_font_sizes/font_size = 8
 text = "Press Left/Right button to move.
 Press space bar to jump"
 horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Texts"]
+offset_left = -64.0
+offset_top = -161.0
+offset_right = 84.0
+offset_bottom = -138.0
+theme_override_colors/font_color = Color(0.666667, 0.666667, 0.666667, 1)
+theme_override_fonts/font = ExtResource("8_cohtu")
+theme_override_font_sizes/font_size = 8
+text = "Why are there eye?"
+
+[node name="Label4" type="Label" parent="Texts"]
+offset_left = 1109.0
+offset_top = 69.0
+offset_right = 1203.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.0210913, 0.182334, 0.527198, 1)
+theme_override_fonts/font = ExtResource("8_cohtu")
+theme_override_font_sizes/font_size = 8
+text = "Almost there..."
